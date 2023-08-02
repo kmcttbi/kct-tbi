@@ -361,9 +361,3 @@ footer a:hover {
   transform: translateY(0);
 }
 
-/* CSS for touch response animation */
-/* CSS for touch response animation */
-.touch-response {
-  transform: scale(0.95);
-  transition: transform 100ms;
-}
