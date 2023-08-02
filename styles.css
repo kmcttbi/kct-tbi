@@ -286,7 +286,6 @@ footer {
 .glowing-button a {
   color: #fff;
   text-decoration: none;
-  pointer-events: none; /* Disable pointer events for the anchor to allow ripple effect on button click */
 }
 
 /* Ripple animation */
@@ -300,8 +299,8 @@ footer {
 
 @keyframes ripple-animation {
   to {
-      transform: scale(4);
-      opacity: 0;
+    transform: scale(4);
+    opacity: 0;
   }
 }
 
