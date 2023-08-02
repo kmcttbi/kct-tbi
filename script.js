@@ -1,23 +1,3 @@
-// Function to handle the touch response animation for the boxes
-function handleTouchResponseAnimationStart(e) {
-  const box = e.currentTarget;
-  box.classList.add('touch-response');
-}
-
-function handleTouchResponseAnimationEnd(e) {
-  const box = e.currentTarget;
-  box.classList.remove('touch-response');
-}
-
-// Add event listeners for touch and click events to trigger touch response animation
-const boxes = document.querySelectorAll('.box');
-boxes.forEach(box => {
-  box.addEventListener('mousedown', handleTouchResponseAnimationStart);
-  box.addEventListener('touchstart', handleTouchResponseAnimationStart);
-  box.addEventListener('mouseup', handleTouchResponseAnimationEnd);
-  box.addEventListener('touchend', handleTouchResponseAnimationEnd);
-});
-
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
@@ -60,7 +40,7 @@ window.addEventListener('scroll', handleScrollAnimations);
 handleScrollAnimations();
 
 // JavaScript to open the Google Forms link when the button is clicked
-const applyNowButton = document.getElementById('apply-now-button');
+const applyNowButton = document.querySelector('.glowing-button a');
 
 applyNowButton.addEventListener('click', function() {
   window.open('https://docs.google.com/forms/d/e/1FAIpQLSetoT735nIO26NuntNfpk28FHzvFB1M_sxGlj7bBwrwkS97lw/viewform?usp=sf_link', '_blank');
