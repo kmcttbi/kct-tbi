@@ -1,0 +1,369 @@
+/* Common styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+
+.box {
+  position: relative;
+  width: 100%;
+  min-height: 200px;
+  background-color: #fff;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease; /* Add a transition for the pop-up animation */
+}
+
+.box.green {
+  background-color: #7fbd49;
+}
+
+.image-container {
+  flex: 0 0 50%;
+  max-height: 150px;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Use "contain" instead of "cover" for the images */
+}
+
+.box-content {
+  flex: 1; /* Take up all available space */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: center; /* Align the text to the center */
+}
+
+.box-content h2 {
+  font-size: 20px; /* Adjust the font size for the heading */
+  margin-bottom: 10px; /* Add some spacing between the heading and the paragraph */
+}
+
+.box-content p {
+  flex: 1; /* Make the paragraph take up all available space */
+  font-size: 16px; /* Adjust the font size for the paragraph */
+}
+
+/* Media Query for Responsive Layout - Larger screens */
+/* Common styles */
+body {
+  /* ... existing styles ... */
+}
+
+.container {
+  /* ... existing styles ... */
+}
+
+.box {
+  /* ... existing styles ... */
+  flex-basis: 100%; /* Add this line to take up the full width of the container */
+}
+
+/* Media Query for Responsive Layout - Larger screens */
+@media screen and (min-width: 768px) {
+  .container {
+    /* ... existing styles ... */
+  }
+
+  .box {
+    /* ... existing styles ... */
+    flex-basis: calc(50% - 20px); /* Update this line to adjust the width for the 2-column layout */
+    max-width: 400px; /* Update this line to limit the max-width for larger screens */
+  }
+}
+
+/* Media Query for Responsive Layout - Smaller screens */
+@media screen and (max-width: 768px) {
+  .box {
+    /* ... existing styles ... */
+  }
+
+  /* ... existing styles ... */
+}
+
+
+
+/* Media Query for Responsive Layout - Smaller screens */
+@media screen and (max-width: 768px) {
+  .box {
+    width: 100%; /* Reset the box width to full width on smaller screens */
+    flex-direction: row; /* Change back to row for the image and text to be side by side */
+    align-items: center; /* Center align the content horizontally */
+  }
+
+  .image-container {
+    flex: 0 0 30%; /* Reduce the image container width for better alignment */
+    max-height: 150px;
+  }
+
+  .box-content {
+    flex: 1; /* Take up all available space */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: left; /* Align the text to the left */
+  }
+
+  .box-content h2 {
+    font-size: 18px; /* Adjust the font size for the heading */
+    margin-bottom: 10px; /* Add some spacing between the heading and the paragraph */
+  }
+
+  .box-content p {
+    flex: 1; /* Make the paragraph take up all available space */
+    font-size: 14px; /* Adjust the font size for the paragraph */
+  }
+
+  /* Cover section styles for mobile screens */
+  .cover video {
+    width: 100%;
+    height: 100vh; /* Set the cover video height to be 100% of the viewport height */
+    object-fit: cover; /* Adjust the video size to cover the entire container */
+  }
+
+  .cover-content {
+    position: absolute;
+    top: 50%; /* Adjust the vertical position of the cover content */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; /* Align the text to the center */
+    color: #054005; /* Green text color */
+  }
+
+  /* Show the menu button on mobile screens */
+  .menu-button {
+    cursor: pointer;
+    display: block;
+  }
+
+  .menu-button .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+  }
+
+  #main-menu {
+    display: block;
+  }
+
+  #main-menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+  }
+
+  #main-menu ul li {
+    margin-right: 20px;
+  }
+
+  #main-menu ul li a {
+    color: #333;
+    text-decoration: none;
+  }
+}
+/* Header styles */
+header {
+    background-color: #ffffff;
+    padding: 1rem;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    text-align: left; /* Align the text to the left */
+}
+
+header img {
+    width: 100px;
+    margin-right: 10px;
+}
+
+header nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    color: #000; /* Black link color */
+    text-decoration: none;
+}
+
+/* Cover section styles */
+.cover {
+    position: relative;
+    height: 100vh; /* Set the cover height to be the full viewport height */
+    margin-top: -1px; /* Remove the gap between header and cover video */
+    overflow: hidden; /* Hide any content that overflows from the cover */
+}
+
+.cover video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Automatically adjust the size of the video to cover the entire container */
+    z-index: -1;
+}
+
+.cover-content {
+    position: absolute;
+    top: 50%; /* Adjust the vertical position of the cover content */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; /* Align the text to the center */
+    color: #054005; /* Green text color */
+}
+
+/* Main section styles */
+main {
+    background-color: #fff;
+    padding: 2rem;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+/* Footer styles */
+footer {
+    background-color: #7fbd49; /* Set the background color to green */
+    color: #fff; /* Set the text color to white */
+    text-align: center; /* Align the text to the center */
+    padding: 1rem;
+}
+
+/* Glowing button styles for the "Apply Now" section */
+/* Glowing button styles for the "Apply Now" section */
+.glowing-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #7fbd49;
+  color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(127, 189, 73, 0.8);
+  animation: glow 2s infinite;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease; /* Add transition for smooth color change */
+}
+
+.glowing-button:hover {
+  background-color: #62a638; /* Change the background color on hover */
+}
+
+.glowing-button a {
+  color: #fff;
+  text-decoration: none;
+  pointer-events: none; /* Disable pointer events for the anchor to allow ripple effect on button click */
+}
+
+/* Ripple animation */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.6);
+  transform: scale(0);
+  animation: ripple-animation 0.5s linear;
+}
+
+@keyframes ripple-animation {
+  to {
+      transform: scale(4);
+      opacity: 0;
+  }
+}
+
+/* Apply Now section styles */
+
+/* Phone and Mail logo styles */
+.phone-logo,
+.mail-logo {
+  display: inline-block;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+/* Media Query for Responsive Layout */
+@media screen and (max-width: 768px) {
+  /* Add responsive styles here if needed */
+}
+/* Footer styles */
+footer {
+  background-color: #7fbd49; /* Set the background color to green */
+  color: #fff; /* Set the text color to white */
+  text-align: center; /* Align the text to the center */
+  padding: 1rem;
+}
+
+/* Footer link styles */
+footer a {
+  color: #fff; /* Set link text color to white */
+  text-decoration: none; /* Remove underline from links */
+}
+
+footer a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
+/* CSS for pop-up animation */
+/* CSS for pop-up animation */
+/* CSS for pop-up animation */
+@keyframes popUpAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Start slightly above the final position */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Move to the final position */
+  }
+}
+
+.pop-up {
+  opacity: 0;
+  transform: translateY(20px); /* Hide the elements slightly above the final position initially */
+}
+
+.animate {
+  animation: popUpAnimation 0.8s ease-out; /* Adjust the animation duration for a smoother effect */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* CSS for touch response animation */
+/* CSS for touch response animation */
+.touch-response {
+  transform: scale(0.95);
+  transition: transform 100ms;
+}
